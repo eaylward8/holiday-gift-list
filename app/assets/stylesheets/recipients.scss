@@ -1,0 +1,46 @@
+$blue: #007bff;
+$gray: #ced4da;
+
+[aria-sort] {
+  &:hover, a:hover {
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+span.sort-icons {
+  i:first-child {
+    margin-right: -4px;
+  }
+}
+
+[aria-sort="none"] span.sort-icons {
+  i {
+    color: $gray;
+  }
+}
+
+[aria-sort="ascending"] span.sort-icons {
+  i:first-child {
+    color: #007bff;
+  }
+
+  i:last-child {
+    color: #ced4da;
+  }
+}
+
+[aria-sort="descending"] span.sort-icons {
+  i:first-child {
+    color: #ced4da;
+  }
+
+  i:last-child {
+    color: #007bff;
+  }
+}

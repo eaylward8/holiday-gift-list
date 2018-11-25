@@ -1,0 +1,37 @@
+<div class="container-fluid" >
+  <div class="row justify-content-center">
+    <h1>Santa's Gift List</h1>
+  </div>
+
+  <div class="row">
+    <div class="col" style="border: 1px solid green"></div>
+    <div class="col" style="border: 1px solid red">
+      <nav data-controller="nav" class="nav nav-pills justify-content-between">
+        <a data-target="nav.link"
+           data-action="nav#toggleActive"
+           class="nav-item nav-link active btn btn-outline-success"
+           href=<%= recipients_path(nice: 1) %>>Nice</a>
+        <a data-target="nav.link"
+           data-action="nav#toggleActive"
+           class="nav-item nav-link btn btn-outline-danger"
+           href=<%= recipients_path(nice: 0) %>>Naughty</a>
+      </nav>
+    </div>
+    <div class="col" style="border: 1px solid blue"></div>
+  </div>
+
+  <div class="row">
+    <div class="col" style="border: 1px solid pink">
+      Filters
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col" style="border: 1px solid purple"></div>
+    <div data-target="gift-list.container"
+         data-controller="gift-list"
+         data-action="navSwitch@document->gift-list#displayGifts"
+         class="col-10" style="border: 1px solid orange"></div>
+    <div class="col" style="border: 1px solid black"></div>
+  </div>
+</div>
