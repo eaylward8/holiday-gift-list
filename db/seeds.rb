@@ -16,7 +16,7 @@ def short_country
   country
 end
 
-1000.times do
+500.times do
   recipient = Recipient.new(first_name: Faker::Name.first_name,
                             last_name: Faker::Name.last_name,
                             age: [
@@ -31,14 +31,13 @@ end
   nice_gifts = [
     Faker::Commerce.product_name,
     Faker::Commerce.product_name,
-    Faker::Commerce.product_name,
     "#{Faker::Dog.breed} Puppy",
     Faker::Vehicle.make_and_model,
     Faker::HarryPotter.book,
     Faker::Device.model_name
   ]
 
-  naughty_gifts = ['Coal', 'Reindeer Poop', 'Bag of Onions', 'Tissues', 'Jigsaw Puzzle w/ Missing Pieces', 'Nickelback CD']
+  naughty_gifts = ['Coal', 'Reindeer Poop', 'Tissues', 'Jigsaw Puzzle w/ Missing Pieces', 'Nickelback CD']
 
   recipient.gift = Gift.new(name: recipient.nice ? nice_gifts.sample : naughty_gifts.sample)
   recipient.save

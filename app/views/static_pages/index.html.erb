@@ -18,16 +18,13 @@
     </div>
   </div>
 
-  <%# <div class="row">
-    <div class="col" style="border: 1px solid green">
-      Filters
-    </div>
-  </div> %>
-
   <div class="row justify-content-center">
     <div data-controller="gift-list"
          data-action="navSwitch@document->gift-list#handleNavSwitch"
-         data-gift-list-nice-param="1"
+         data-gift-list-base-path="<%= recipients_path %>"
+         data-gift-list-nice="1"
+         data-gift-list-sort-by="last_name"
+         data-gift-list-order="asc"
          class="col-10">
       <table class="table table-striped">
         <thead>
@@ -35,7 +32,7 @@
             <th scope="col"
                 data-action="click->gift-list#sort"
                 data-target="gift-list.header"
-                data-url="<%= recipients_path(sort: :last_name) %>"
+                data-sort-by="last_name"
                 aria-sort="ascending">
               <div>
                 <span>Name</span>
@@ -45,7 +42,7 @@
             <th scope="col"
                 data-action="click->gift-list#sort"
                 data-target="gift-list.header"
-                data-url="<%= recipients_path(sort: :age) %>"
+                data-sort-by="age"
                 aria-sort="none">
               <div>
                 <span>Age</span>
@@ -55,7 +52,7 @@
             <th scope="col"
                 data-action="click->gift-list#sort"
                 data-target="gift-list.header"
-                data-url="<%= recipients_path(sort: 'gifts.name') %>"
+                data-sort-by="gifts.name"
                 aria-sort="none">
               <div>
                 <span>Gift</span>
@@ -65,7 +62,7 @@
             <th scope="col"
                 data-action="click->gift-list#sort"
                 data-target="gift-list.header"
-                data-url="<%= recipients_path(sort: :city) %>"
+                data-sort-by="city"
                 aria-sort="none">
               <div>
                 <span>City</span>
@@ -75,7 +72,7 @@
             <th scope="col"
                 data-action="click->gift-list#sort"
                 data-target="gift-list.header"
-                data-url="<%= recipients_path(sort: :country) %>"
+                data-sort-by="country"
                 aria-sort="none">
               <div>
                 <span>Country</span>

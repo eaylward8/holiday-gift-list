@@ -3,13 +3,13 @@ import { Controller } from 'stimulus'
 export default class extends Controller {
   static targets = [ 'link' ]
 
-  initialize() {
-    document.onreadystatechange = () => {
-      if (document.readyState === 'complete') {
-        this.emitNavSwitchEvent(this.activeLink.href)
-      }
-    }
-  }
+  // initialize() {
+  //   document.onreadystatechange = () => {
+  //     if (document.readyState === 'complete') {
+  //       this.emitNavSwitchEvent(this.activeLink.href)
+  //     }
+  //   }
+  // }
 
   get links() {
     return this.linkTargets
