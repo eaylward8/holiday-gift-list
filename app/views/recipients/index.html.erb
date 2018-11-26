@@ -1,67 +1,9 @@
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col"
-          aria-sort="ascending">
-          <a href="#sort[id]=asc">
-            <span>Name</span>
-            <span class="sort-icons">
-              <i class="fas fa-arrow-up"></i>
-              <i class="fas fa-arrow-down"></i>
-            </span>
-          </a>
-      </th>
-      <th scope="col"
-          aria-sort="none">
-          <a href="#sort[age]=asc">
-            <span>Age</span>
-            <span class="sort-icons">
-              <i class="fas fa-arrow-up"></i>
-              <i class="fas fa-arrow-down"></i>
-            </span>
-          </a>
-      </th>
-      <th scope="col"
-          aria-sort="none">
-          <a href="#sort[gift]=asc">
-            <span>Gift</span>
-            <span class="sort-icons">
-              <i class="fas fa-arrow-up"></i>
-              <i class="fas fa-arrow-down"></i>
-            </span>
-          </a>
-      </th>
-      <th scope="col"
-          aria-sort="none">
-          <a href="#sort[city]=asc">
-            <span>City</span>
-            <span class="sort-icons">
-              <i class="fas fa-arrow-up"></i>
-              <i class="fas fa-arrow-down"></i>
-            </span>
-          </a>
-      </th>
-      <th scope="col"
-          aria-sort="none">
-          <a href="#sort[country]=asc">
-            <span>Country</span>
-            <span class="sort-icons">
-              <i class="fas fa-arrow-up"></i>
-              <i class="fas fa-arrow-down"></i>
-            </span>
-          </a>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @recipients.each do |recipient| %>
-      <tr>
-        <td><%= recipient.name %></td>
-        <td><%= recipient.age %></td>
-        <td><%= recipient.gift.name %></td>
-        <td><%= recipient.city %></td>
-        <td><%= recipient.country %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @recipients.each do |recipient| %>
+  <tr>
+    <td><%= recipient.name %></td>
+    <td><%= recipient.age %></td>
+    <td><%= recipient.gift.name %></td>
+    <td><%= recipient.city %></td>
+    <td><%= recipient.country %></td>
+  </tr>
+<% end %>

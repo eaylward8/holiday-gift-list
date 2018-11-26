@@ -7,7 +7,8 @@ $gray: #ced4da;
     text-decoration: none;
   }
 
-  a {
+  div {
+    color: $blue;
     display: flex;
     justify-content: space-between;
   }
@@ -15,7 +16,7 @@ $gray: #ced4da;
 
 span.sort-icons {
   i:first-child {
-    margin-right: -4px;
+    margin-right: -3px;
   }
 }
 

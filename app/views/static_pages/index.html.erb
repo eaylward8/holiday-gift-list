@@ -1,11 +1,10 @@
 <div class="container-fluid" >
-  <div class="row justify-content-center">
-    <h1>Santa's Gift List</h1>
+  <div class="row justify-content-center mt-3">
+    <h1 class="page-title">Santa's Gift List</h1>
   </div>
 
-  <div class="row">
-    <div class="col" style="border: 1px solid green"></div>
-    <div class="col" style="border: 1px solid red">
+  <div class="row justify-content-center my-2">
+    <div class="col-3">
       <nav data-controller="nav" class="nav nav-pills justify-content-between">
         <a data-target="nav.link"
            data-action="nav#toggleActive"
@@ -17,21 +16,76 @@
            href=<%= recipients_path(nice: 0) %>>Naughty</a>
       </nav>
     </div>
-    <div class="col" style="border: 1px solid blue"></div>
   </div>
 
-  <div class="row">
-    <div class="col" style="border: 1px solid pink">
+  <%# <div class="row">
+    <div class="col" style="border: 1px solid green">
       Filters
     </div>
-  </div>
+  </div> %>
 
-  <div class="row">
-    <div class="col" style="border: 1px solid purple"></div>
-    <div data-target="gift-list.container"
-         data-controller="gift-list"
-         data-action="navSwitch@document->gift-list#displayGifts"
-         class="col-10" style="border: 1px solid orange"></div>
-    <div class="col" style="border: 1px solid black"></div>
+  <div class="row justify-content-center">
+    <div data-controller="gift-list"
+         data-action="navSwitch@document->gift-list#handleNavSwitch"
+         data-gift-list-nice-param="1"
+         class="col-10">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col"
+                data-action="click->gift-list#sort"
+                data-target="gift-list.header"
+                data-url="<%= recipients_path(sort: :last_name) %>"
+                aria-sort="ascending">
+              <div>
+                <span>Name</span>
+                <span class="sort-icons"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-down"></i></span>
+              </div>
+            </th>
+            <th scope="col"
+                data-action="click->gift-list#sort"
+                data-target="gift-list.header"
+                data-url="<%= recipients_path(sort: :age) %>"
+                aria-sort="none">
+              <div>
+                <span>Age</span>
+                <span class="sort-icons"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-down"></i></span>
+              </div>
+            </th>
+            <th scope="col"
+                data-action="click->gift-list#sort"
+                data-target="gift-list.header"
+                data-url="<%= recipients_path(sort: 'gifts.name') %>"
+                aria-sort="none">
+              <div>
+                <span>Gift</span>
+                <span class="sort-icons"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-down"></i></span>
+              </div>
+            </th>
+            <th scope="col"
+                data-action="click->gift-list#sort"
+                data-target="gift-list.header"
+                data-url="<%= recipients_path(sort: :city) %>"
+                aria-sort="none">
+              <div>
+                <span>City</span>
+                <span class="sort-icons"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-down"></i></span>
+              </div>
+            </th>
+            <th scope="col"
+                data-action="click->gift-list#sort"
+                data-target="gift-list.header"
+                data-url="<%= recipients_path(sort: :country) %>"
+                aria-sort="none">
+              <div>
+                <span>Country</span>
+                <span class="sort-icons"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-down"></i></span>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody data-target="gift-list.container"></tbody>
+      </table>
+    </div>
   </div>
 </div>
