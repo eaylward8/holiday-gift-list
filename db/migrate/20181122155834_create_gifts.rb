@@ -3,6 +3,7 @@ class CreateGifts < ActiveRecord::Migration[5.2]
     create_table :gifts do |t|
       t.string :name, null: false
       t.references :recipient
+      t.boolean :delivered, default: false
       t.timestamps
     end
   end

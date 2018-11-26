@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2018_11_22_155834) do
   create_table "gifts", force: :cascade do |t|
     t.string "name", null: false
     t.integer "recipient_id"
+    t.boolean "delivered", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["recipient_id"], name: "index_gifts_on_recipient_id"
